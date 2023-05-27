@@ -9,13 +9,17 @@ s = serial.Serial('COM4', 115200)
 
 def Trajectory2Gcode(trajectory):
     for dotIndex in range(len(trajectory)):
-        trajectory[dotIndex] = f"G01 X{int(trajectory[dotIndex][0])} Y{int(trajectory[dotIndex][1])} Z{45*int(trajectory[dotIndex][2])}"
+        trajectory[dotIndex] = f"G01 X{int(trajectory[dotIndex][0])} Y{int(trajectory[dotIndex][1])} Z{0.3*int(trajectory[dotIndex][2])}"
     return trajectory
         
 
 def SerialTx(Gcode):
+    s.write(('F100' + '\n').encode())
+    s.write(('G21' + '\n').encode())
     for dotIndex in range(len(Gcode)):
-        s.write(Gcode[dotIndex] + '\n')
+        s.write((Gcode[dotIndex] + '\n').encode())
+        s.write(('G04 p0.5' + '\n').encode())
+        return None
 
 global loopRun
 

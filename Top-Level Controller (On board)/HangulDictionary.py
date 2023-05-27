@@ -76,7 +76,7 @@ class Hangul:
         ax.plot(x, y, z)
         ax.set_title('word trajectory 3d plot')
 
-    def stringShower(self, wordnum, string):
+    def stringShower(self, size, wordnum, string):
         x = []
         y = []
         z = []
@@ -85,7 +85,7 @@ class Hangul:
             y.append(dot[1])
             z.append(dot[2])
         ax = plt.figure().add_subplot(projection='3d')
-        ax.axis([0, 0.7*wordnum, 0.7*wordnum, 0])
+        ax.axis([0, size*0.7*wordnum, size*wordnum, 0])
         ax.plot(x, y, z)
         ax.set_title('string trajectory 3d plot')
 
@@ -115,9 +115,9 @@ class Hangul:
         string_dot_list = []
         i = 0
         for char in chars:
-            char = self.offset(char, i*size + 0.7, 0)
+            char = self.offset(char, i*size, 0)
             string_dot_list = string_dot_list + char
-            i = i + 1
+            i = i + 0.7
         return string_dot_list
 
     def Type1(self, size, word1, word2):
