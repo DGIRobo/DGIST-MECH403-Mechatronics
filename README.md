@@ -4,8 +4,6 @@
 
 **DGIST Undergradurate Student Minhyeok Baek**
 
-***MECH404 final report***
-
 *Daegu Gyeongbuk Institute of Science and Technology (DGIST) Spring semester*
 
 # **i**. Introduction
