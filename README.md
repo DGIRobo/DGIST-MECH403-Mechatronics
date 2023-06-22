@@ -62,13 +62,13 @@
 
 Pen Plotter는 다음과 같이 설계되었습니다.
 
-![Untitled](Images-for-Introduction/Untitled.png)
+![Untitled](Images-for-README/Untitled.png)
 
 기존의 x-y axis를 이동하는 Pen Plotter와는 다르게, y축 움직임을 롤러로 대체하여 공간의 컴팩트함을 강조하였습니다. 또한 모든 몸체와 하우징을 3D프린터와 레이저커터를 사용해 조립 가능한 형태로 제작함으로써, 교체 및 수리의 용이성과 제작의 간편함을 추구하였습니다. 바닥면의 경우 아크릴을 사용하여 바닥과의 마찰을 최소로 함과 동시에 평탄함을 잡았습니다. 각 구조에 대해 디테일하게 설명하도록 하겠습니다.
 
 ## 1-1) Base design
 
-![Untitled](Images-for-Introduction/Untitled%201.png)
+![Untitled](Images-for-README/Untitled%201.png)
 
  틀이 되는 베이스 부분입니다. 기본적으로 조립이 용이하도록 타공 형식으로 나사를 체결할 수 있도록 제작하였으며, 제일 basic한 M3 나사로 체결합니다. 실제 조립에는 진동이나 기타 이동으로 풀리지 않도록 spring washer를 사용해 진동 및 기타 disturbance에 영향을 받지 않도록 조립하였습니다.
 
@@ -84,11 +84,11 @@ Blue: Wire holder+Case
 
 ## 1-2) X-axis side
 
-![Untitled](Images-for-Introduction/Untitled%202.png)
+![Untitled](Images-for-README/Untitled%202.png)
 
 X축의 경우, belt를 사용한 일반적인 plotter의 방식을 사용하였습니다. belt만 가지고는 고정력이 부족하기 때문에, 10mm 연마봉을 사용하여 pen을 지지하였습니다. 이 경우 연마봉과 pen 지지대 사이의 마찰력이 움직임에 영향을 줄 수 있기 때문에, ball bush를 사용하여 마찰력을 상쇄하였습니다.
 
-![Untitled](Images-for-Introduction/Untitled%203.png)
+![Untitled](Images-for-README/Untitled%203.png)
 
 Belt와 pen 지지대는 M3 나사로 체결하여 나사가 belt를 눌러주어 이동에 영향이 가지 않도록 디자인하였습니다.
 
@@ -96,7 +96,7 @@ X축의 최소 이동 거리의 경우, NEMA 17모터의 최소 step이 1.8도�
 
 ## 1-3) Y-axis side
 
-![Untitled](Images-for-Introduction/Untitled%204.png)
+![Untitled](Images-for-README/Untitled%204.png)
 
 Y축의 경우, roller를 사용하여 종이를 밀어주는 일반 잉크젯 프린터와 같은 방식을 차용하였습니다. roller는 저가 3D프린터에 주로 사용하는 roller bearing을 사용하였고, 단단한 고정 및 이동을 위해 양쪽에 2개씩, 위 아래로 한 쌍, 총 8개를 사용하여 종이를 단단하고 일정하게 밀어줄 수 있도록 하였습니다. 또한 손잡이를 10mm 연마봉으로 지지함으로써, 지레의 원리로 종이를 무겁게 눌러줌으로써 slip으로 인한 disturbance를 방지합니다.
 
@@ -104,13 +104,13 @@ Y축의 경우, roller를 사용하여 종이를 밀어주는 일반 잉크젯 �
 
 ## 1-4) Z-axis side
 
-![Untitled](Images-for-Introduction/Untitled%205.png)
+![Untitled](Images-for-README/Untitled%205.png)
 
 기존의 돌기를 Z-axis의 lifter가 밀어 펜을 움직이는 방식과 달리, pen 자체를 밀어 움직이도록 하였습니다. 따라서 디자인의 컴팩트함을 더 올렸고, 단순히 belt의 tension으로 pen을 원위치 시키는 것이 아닌 두번째 사진처럼 종이에서 떨어질 때에는 반대방향으로 회전하여 pen을 고정시킴으로써 pen이 앞으로 쏠려 종이에 닿거나 진동으로 인해 종이에 닿는 상황을 막아줍니다. 이는 출력부의 회전을 고정시켜 출력시에 더 안정적으로 이동할 수 있게 해줍니다.
 
 ## 1-5) Other details
 
-![Untitled](Images-for-Introduction/Untitled%206.png)
+![Untitled](Images-for-README/Untitled%206.png)
 
 뒷 부분에는 긴 wire들을 수용할 수 있도록 wire holder를 제작하였습니다. 세 축(X Y Z)의 전선들을 각각 수용할 수 있어 추후 점검이나 부품 교체에 용이하도록 설계하였습니다. 이 역시 spring washer로 조립되어 안정성을 높였습니다. 각 wire들은 unshielded twisted pair로 꼬아 놓음으로써 발생할 수 있는 noise나 간섭에 대해서도 보강하였습니다.
 
@@ -120,7 +120,7 @@ Y축의 경우, roller를 사용하여 종이를 밀어주는 일반 잉크젯 �
 
 다음으로 위와 같은 Hardware를 구동하는 Software는 아래 그림과 같이 설계되었습니다. 
 
-![Untitled](Images-for-Introduction/Untitled%207.png)
+![Untitled](Images-for-README/Untitled%207.png)
 
 전체적인 Algorithm을 요약해서 설명하자면 다음과 같습니다. 사용자가 컴퓨터에 키보드를 이용해서 한글 문장을 입력하면 Computer는 그 한글 문장을 자모 단위까지 분리하고 자모 Trajectory를 참조해서 글자 하나부터 문장까지 정규화된 계산 방식을 사용해서 차근차근 결합시켜서 하나의 Trajectory를 만들어냅니다. 그리고 Computer는 이 Trajectory를 Gcode 양식으로 변환해서 Serial 통신을 통해 Arduino에 송신합니다. 그러면 이제 Arduino는 Computer로부터 Serial 통신을 통해 들어온 Gcode 양식의 Trajectory를  Step 단위로 바꿔서 각 X축, Y축, Z축 Step 모터를 해당 Step 만큼 움직이는 것을 제어하는 것으로 사용자가 입력한 문장을 A4 종이에 대필하는 것을 수행할 수 있게 됩니다.
 
@@ -130,21 +130,21 @@ Y축의 경우, roller를 사용하여 종이를 밀어주는 일반 잉크젯 �
 
 앞서 소개했듯 사용자가 입력한 한글 문장을 한글의 자모 단위까지 분리하고 한 글자 마다 Type을 부여하는 Algorithm은 Hangul Divider라는 이름으로 객체화되어 있습니다. 이 Hangul Divider는 [6]에서 소개하는 Algorithm을 펜 플로터 Trajectory 생성을 위해 Concept만 반영하고 다르게 구현된 방식입니다. [6]의 설명에 따르면 한글 unicode에는 아래 사진과 같은 규칙이 있습니다.
 
-![Untitled](Images-for-Introduction/Untitled%208.png)
+![Untitled](Images-for-README/Untitled%208.png)
 
 우선 한글 unicode는 초성이 588 문자마다 바뀝니다. 이는 즉 한글 unicode를 588로 나누면 그 한글의 초성을 추출할 수 있다는 것을 의미합니다. 또한 한글 unicode는 중성이 같은 초성일 때 28 문자마다 바뀝니다. 이는 즉 한글 unicode에서 초성을 추출한 후 unicode에서 초성값에 588을 곱한 값을 빼주고 28로 나누면 그 한글의 중성을 추출할 수 있다는 것을 의미합니다. 종성도 마찬가지로 초성과 중성이 같을 때 28개가 존재합니다. 따라서 한글 unicode에서 초성을 추출한 후 unicode에서 초성값에 588을 곱한 값을 빼주고 중성값에 28을 곱한 값을 빼주고 28로 나누면 종성을 추출할 수 있습니다. 따라서 Hangul Divider Algorithm은 이를 반영하여 입력된 문장을 글자 하나 하나로 나누고 글자 하나 하나를 초성 중성 종성으로 또 한번 나눕니다.
 
 거기에 Hangul Divider Algorithm은 Trajectory 형성을 위해 한글의 형태에 대한 정보를 분리한 초성 중성 종성 정보에 추가하여 리턴합니다. 한글은 중성이 세로형인지 가로형인지 이중모음인지에 따라 3가지 Type으로 구분되고 각각의 Type은 종성이 있는가에 따라 다시 2가지 Type으로 구분되기 때문에 Hangul Divider Algorithm은 한글의 모양을 다음의 6가지로 정형화 합니다.
 
-![Untitled](Images-for-Introduction/Untitled%209.png)
+![Untitled](Images-for-README/Untitled%209.png)
 
 이러한 Hangul Divider Algorithm의 Pseudocode는 다음과 같이 정리됩니다.
 
-![Untitled](Images-for-Introduction/Untitled%2010.png)
+![Untitled](Images-for-README/Untitled%2010.png)
 
 따라서 이러한 Hangul Divider Algorithm을 실행하면 다음과 같이 문장을 글자 단위로 한번, 초성 중성 종성 단위로 한번 더 분리해주는 기능을 수행해준다는 것을 확인할 수 있습니다.
 
-![Untitled](Images-for-Introduction/Untitled%2011.png)
+![Untitled](Images-for-README/Untitled%2011.png)
 
 ## 2-2) One Word Making Algorithm
 
@@ -152,33 +152,33 @@ Y축의 경우, roller를 사용하여 종이를 밀어주는 일반 잉크젯 �
 
 우선 Hangul Trajectory Map Algorithm은 Hangul Divider Algorithm에서 분리된 초성 중성 종성을 참조하여 각 문자를 Trajectory로 치환해줍니다. 이때 Hangul Trajectory Map Algorithm은 아래 그림과 같은 초성 Map, 중성 Map, 종성 Map을 보조 자료구조로서 가지고 있기 때문에 이 Map들을 이용해서 초성 중성 종성을 참조하여 각 문자를 Trajectory로 치환하게 됩니다.
 
-![Untitled](Images-for-Introduction/Untitled%2012.png)
+![Untitled](Images-for-README/Untitled%2012.png)
 
 Hangul Trajectory Map Algorithm이 각 문자를 Trajectory로 치환하면 다음으로 Trajectory Maker Algorithm은 Hangul Divider Algorithm의 결과값 중에서 해당 글자의 Type을 조회합니다. Trajectory Maker Algorithm은 이 Type에 따라서 아래 사진과 같이 자모 Trajectory를 resize하고 offset을 설정하고 합쳐줌으로써 하나의 글자 Trajectory를 만들어냅니다.
 
-![Untitled](Images-for-Introduction/Untitled%2013.png)
+![Untitled](Images-for-README/Untitled%2013.png)
 
 이러한 Trajectory Maker Algorithm에서 Type 1 글자의 Trajectory를 생성하는 function의 Pseudocode는 다음과 같이 정리됩니다.
 
-![Untitled](Images-for-Introduction/Untitled%2014.png)
+![Untitled](Images-for-README/Untitled%2014.png)
 
 ## 2-3) String Making Algorithm
 
 그러면 이제 Hangul Trajectory Map Algorithm과 Trajectory Maker Algorithm이 한글 한 글자 Trajectory를 만드는 과정을 알아보았으므로, Trajectory Maker Algorithm이 이러한 한 글자 한 글자들이 이어진 단어 및 문장 Trajectory를 어떻게 만들어내는지 알아보도록 합니다. Trajectory Maker Algorithm에서 이러한 한 글자 한 글자들이 이어진 단어 및 문장 Trajectory를 만드는 StringTrajectoryMaking function의 Pseudocode는 다음과 같습니다.
 
-![Untitled](Images-for-Introduction/Untitled%2015.png)
+![Untitled](Images-for-README/Untitled%2015.png)
 
 Pseudocode를 보면 확인할 수 있듯 Trajectory Maker Algorithm은 사람이 글씨를 쓰는 것과 상당히 비슷한 방식으로 글씨 Trajectory를 생성합니다. 구체적으로 말하자면 한 글자를 쓰면 그 글자의 가로 크기 만큼 X축으로 이동하여 새 한 글자를 작성하도록 Pseudocode가 만들어져 있습니다. 이때 글자를 X축으로 어느 정도나 이동시켜서 작성할지에 관한 정보는 AccumulatedX라는 변수가 담당하여 계산합니다. 그런데 이 AccumulatedX가 Page의 최대 X길이를 넘어가면 사람이 글을 쓸 때 가로줄을 한줄 다쓰면 줄바꿈을 해서 새 줄을 쓰듯 AccumulatedY가 한 글자 크기만큼 누적되고 accumulatedX가 0부터 다시 출발하도록 되어 있습니다. 이에 따라 단순한 한 글자이던 한 단어이든 한 문장이던 여러 문장이던 상관없이 작성 문서 규격을 고려한 Trajectory를 생성할 수 있다는 것을 알 수 있습니다.
 
 따라서 이러한 String Making Algorithm을 실행하면 다음과 같이 문장에 대응하는 Trajectory를 작성 문서 규격을 고려해서 생성해준다는 것을 확인할 수 있습니다.
 
-![Untitled](Images-for-Introduction/Untitled%2016.png)
+![Untitled](Images-for-README/Untitled%2016.png)
 
 ## 2-4) Auto Word-Wrap
 
 그런데 지금까지의 Algorithm은 한번 입력받으면 그 한번 입력받은 문장에 대해서만 작성을 완료하면 모든 작업이 완료되도록 만들어져 있습니다. 우리가 최종적으로 만들고자 하는 펜 플로터가 지속적으로 사용자와 상호작용하면서 사용자가 쓰고 싶은 단어를 계속 써주는 것임을 생각해보면 한번 입력받은 문장에 대해서 작성을 완료하면 다음 입력받을 문장을 이어서 작성할 수 있는 추가적인 Algorithm이 필요합니다. 따라서 만들어진 것이 다음그림과 같은 Tree Diagram에 따라 작동하는 Auto Word-Wrap Algorithm입니다.
 
-![Untitled](Images-for-Introduction/Untitled%2017.png)
+![Untitled](Images-for-README/Untitled%2017.png)
 
 이 Auto Word-Wrap Algorithm은 한번 입력 받은 문장에 대해 작성을 완료하면 자동으로 줄바꿈을 해서 다음 입력받을 문장을 쓸 준비를 하도록 하는 Algorithm입니다. 이 Algorithm은 Trajectory 형성 단계에서 Trajectory의 마지막 점을 (0, AccumulatedY+1.5*size)로 하여 줄바꿈을 구현하고 이동을 완료했을 때, Zero position setting을 의미하는 Gcode를 Arduino에 전송하는 것으로 시작점을 (0,0)으로 하는 다음 입력받을 문장을 이어서 작성할 수 있도록 구현되었습니다. 그 결과 한번 입력 받은 문장의 작성을 완료하면 다음 줄로 넘어가서 새로 작성할 문장을 입력받고 새로 작성할 문장을 작성한 이후에도 지속적으로 사용자의 문장을 받아 대필하는 작업을 수행할 수 있게 되었습니다.
 
@@ -232,25 +232,25 @@ def Trajectory2Gcode(trajectory):
 
 첫번째로 진행한 Test는 원하는 글씨의 크기와 한글 한 글자를 입력했을 때, 펜 플로터가 그 글씨를 정확하게 쓸 수 있는지에 대해 검증하는 실험이었습니다. 이 실험에서는 글자 크기를 10mm로 하고 ‘가’를 입력하였습니다. 그 결과는 아래 사진과 같이 나왔습니다. 이를 통해 본 프로젝트에서 만든 펜 플로터가 입력된 궤적을 큰 오차없이 정확하게 그려내는 것이 가능하다는 것을 검증할 수 있었습니다.
 
-![Untitled](Images-for-Introduction/Untitled%2018.png)
+![Untitled](Images-for-README/Untitled%2018.png)
 
 ### 2. Multi Word Writing Test
 
 두번째로 진행한 Test는 원하는 글씨의 크기와 한글 한 단어를 입력했을 때, 펜 플로터가 그 단어를 정확하게 쓸 수 있는지에 대해 검증하는 실험이었습니다. 이 실험에서는 글자 크기를 20mm로 하고 ‘과곽’을 입력하였습니다. 그 결과는 아래 사진과 같이 나왔습니다. 이를 통해 본 프로젝트에서 만든 펜 플로터는 한글 두 글자 이상의 단어도 큰 Compuation 문제 없이 처리할 수 있고 입력받은 글자 크기를 반영해서 자유롭게 출력이 가능하다는 것을 검증할 수 있었습니다.
 
-![Untitled](Images-for-Introduction/Untitled%2019.png)
+![Untitled](Images-for-README/Untitled%2019.png)
 
 ### 3. Word Spacing, Wrap Test
 
 세번째로 진행한 Test는 원하는 글씨의 크기와 한글 한 문장을 입력했을 때, 펜 플로터가 그 문장을 띄어쓰기를 구분하고 자동으로 줄바꿈을 진행하며 정확하게 써내려갈 수 있는지에 대해 검증하는 실험이었습니다. 이 실험에서는 글자 크기를 20mm로 하고 ‘디지스트 기초학부’를 입력하였습니다. 그 결과는 아래 사진과 같이 나왔습니다. 아래 사진을 보면 ‘트’와 ‘기’ 사이에 한 글자 만큼의 space를 정상적으로 반영해서 글자를 작성한 것을 확인할 수 있고 ‘부’가 글자를 작성할 수 있는 범위인 160mm를 넘어가자 그 다음 줄로 자동으로 줄바꿈을 해서 글자를 이어서 작성한 것을 확인할 수 있습니다. 이를 통해 본 프로젝트에서 만든 펜 플로터는 문장 단위도 큰 Compuation 문제 없이 처리할 수 있고 문장이 한 줄 이상을 써야하게 되는 경우에도 자동으로 줄바꿈을 해서 무리없이 모든 문장을 출력할 수 있다는 것을 검증할 수 있었습니다.
 
-![Untitled](Images-for-Introduction/Untitled%2020.png)
+![Untitled](Images-for-README/Untitled%2020.png)
 
 ### 4. Accuracy Test
 
 네번째로 진행한 Test는 같은 위치에서 같은 한글 한 글자를 반복해서 작성할 때 어느 정도로 오차가 누적되어 글씨가 밀리게 될 것인지를 확인하기 위한 실험이었습니다. 이 실험의 결과는 아래와 같이 나왔습니다. 좌측의 사진은 1cm ‘가’를 입력받았을 때 그 글자를 한번만 작성한 결과이고 우측의 사진은 1cm ‘가’를 입력받았을 때 같은 자리에서 3번 그 글자를 작성한 결과입니다. 육안으로 봐도 확실하게 알 수 있듯 정확하게 전혀 오차 없이 같은 자리에서 글자를 작성했다는 것을 확인할 수 있습니다. 이 결과로 미루어 볼 때, 본 프로젝트에서 롤러를 사용한 펜 플로터도 충분히 입력한 궤적을 정확하게 그려낼 수 있다는 것을 알 수 있습니다. 이는 기존의 다른 펜 플로터들이 종이에 글씨를 정확히 작성하기 위해 종이를 고정하고 펜 플로터를 종이 전체 위를 움직이면서 작성하는 대신 공간 효율성을 포기한 것을 본 프로젝트에서 만든 롤러를 사용한 펜 플로터로 개선할 수 있다는 것을 보여줍니다.
 
-![Untitled](Images-for-Introduction/Untitled%2021.png)
+![Untitled](Images-for-README/Untitled%2021.png)
 
 # **iv**. Conclusion
 
